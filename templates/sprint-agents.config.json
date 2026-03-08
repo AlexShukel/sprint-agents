@@ -1,0 +1,14 @@
+{
+	"baseBranch": "main",
+	"jobsDir": "jobs",
+	"specsDir": "specs",
+	"promptsDir": "prompts",
+	"platform": "github",
+	"remote": "origin",
+	"repo": "",
+	"specFiles": [],
+	"scanDirs": ["src/"],
+	"e2eCommand": null,
+	"claudeModel": null,
+	"notifyOnComplete": true
+}
