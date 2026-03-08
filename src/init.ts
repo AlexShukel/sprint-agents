@@ -99,10 +99,42 @@ export async function init(): Promise<void> {
 	}
 
 	console.log('');
-	console.log('sprint-agents initialized! Next steps:');
-	console.log('  1. Edit sprint-agents.config.json to add specFiles and scanDirs');
-	console.log('  2. Customize prompts/ templates for your project');
-	console.log('  3. Run: sprint-agents sprint');
+	console.log('sprint-agents initialized! Here\'s what was created:');
+	console.log('');
+	console.log('  sprint-agents.config.json   — project configuration');
+	console.log('  jobs/README.md              — job catalog (tracks all batches)');
+	console.log('  jobs/CHANGELOG.md           — auto-generated changelog');
+	console.log('  jobs/run-jobs.sh            — job runner script');
+	console.log('  prompts/generate-jobs.md    — prompt for auto-generating jobs');
+	console.log('  prompts/ticket.md           — prompt for ticket-based jobs');
+	console.log('');
+	console.log('Next steps:');
+	console.log('');
+	console.log('  1. Add your spec files and source directories to the config:');
+	console.log('');
+	console.log('     // sprint-agents.config.json');
+	console.log('     {');
+	console.log(`       "repo": "${repo}",`);
+	console.log('       "specFiles": ["specs/feature-x.md", "specs/api.md"],');
+	console.log('       "scanDirs": ["src/", "lib/"],');
+	console.log('       "e2eCommand": "npm test"');
+	console.log('     }');
+	console.log('');
+	console.log('  2. Run a single sprint (generate jobs → run → PR):');
+	console.log('');
+	console.log('     sprint-agents sprint');
+	console.log('');
+	console.log('  3. Or loop until all specs are implemented:');
+	console.log('');
+	console.log('     sprint-agents loop');
+	console.log('');
+	console.log('  4. Or break down a ticket into jobs and execute them:');
+	console.log('');
+	console.log('     sprint-agents ticket tickets/add-auth.md');
+	console.log('');
+	console.log('  5. Or run multiple sprint iterations, then create one PR:');
+	console.log('');
+	console.log('     sprint-agents multi-sprint 3');
 }
 
 function copyIfNotExists(src: string, dest: string): void {
